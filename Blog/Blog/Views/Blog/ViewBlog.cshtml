@@ -1,0 +1,34 @@
+﻿@model ViewBlogViewModel
+
+<article>
+    <div class="container">
+        <div class="row">
+            <h2 class="section-heading">@Model.Blog.Title</h2>
+            <p>@Model.Blog.Body</p>
+        </div>
+    </div>
+    <p class="blog-meta">Posted by <a href="#">Alaaddin (Initial data)</a> on Juni  22, 2017</p>
+    <p>
+        <span comment-total comment-blog-id="@Model.Blog.BlogId" comment-cssClass="mr-2"></span><i class="fa fa-comment mr-1"></i>
+        <a id="like" class="like" data-blog-id="@Model.Blog.BlogId"
+           data-auth="@ViewContext.HttpContext.User.Identity.IsAuthenticated">
+            <i class="fa fa-thumbs-up mr-3 pr-1"> <span id="totalLike" like-total="LIKE" like-blog-id="@Model.Blog.BlogId"></span></i>
+        </a>
+        <a id="dislike" class="like" data-blog-id="@Model.Blog.BlogId"
+           data-auth="@ViewContext.HttpContext.User.Identity.IsAuthenticated">
+            <i class="fa fa-thumbs-down"> <span id="totalDislike" like-total="DISLIKE" like-blog-id="@Model.Blog.BlogId"></span></i>
+        </a>
+        <i id="info" class="text-danger ml-3"><small>log in to like blog</small></i>
+    </p>
+</article>
+
+@*********Form---Comments***********@
+
+@Html.Partial("PartialComment",Model.Comments)
+
+
+
+<script asp-src-include="apis/add-like-dislike.js"></script>
+
+
+

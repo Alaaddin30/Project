@@ -1,0 +1,16 @@
+﻿@model Blog
+
+
+<div class="post-preview">
+    <a asp-controller="Blog" asp-action="ViewBlog" asp-route-blogId="@Model.BlogId"><h2 class="post-title">@Model.Title.Substring(0,50)</h2>
+    <h3 class="post-subtitle">@Model.Body?.Substring(0, 75)...</h3>
+    </a>
+    <p class="post-meta">Posted by <a href="#">Nobody (Initial Data)</a> on @Model.CreatedAt.ToString("MMMM dd, yyyy")</p>
+    <p>
+        <i class="fa fa-comment ml-1 mr-2"></i><span comment-total comment-blog-id="@Model.BlogId" comment-cssClass="mr-3"></span>
+        <i class="fa fa-thumbs-up mr-3 pr-1"> <span like-total="LIKE" like-blog-id="@Model.BlogId"></span></i>
+        <i class="fa fa-thumbs-down"> <span like-total="DISLIKE" like-blog-id="@Model.BlogId"></span></i>
+    </p>
+    
+</div>
+<hr />

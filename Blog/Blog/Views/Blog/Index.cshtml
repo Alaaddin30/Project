@@ -1,0 +1,9 @@
+﻿@model BlogIndexViewModel
+
+    @foreach (Blog blog in Model.Blogs)
+    {
+        @Html.Partial("PartialBlog", blog)
+    }
+
+
+<div pagination pagination-model="@Model.PaginationInfo"  category-id="@Model.CurrentCategoryId" action-method="Index" class="pagination"></div>

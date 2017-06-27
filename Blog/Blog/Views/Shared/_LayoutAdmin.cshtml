@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script asp-src-include="lib/jquery/dist/jquery.min.js"></script>
+    <script asp-src-include="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script asp-src-include="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
+    <link asp-href-include="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link asp-href-include="blog/css/blog.min.css" rel="stylesheet" />*@
+    <link asp-href-include="admin/css/admin-custom.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <title>Mvc Core Blog</title>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!-- BLOG Navigation - START -->
+    @*@await Component.InvokeAsync("Navigation")*@
+    @Html.Partial("PartialNavigation")
+    <!-- BLOG Navigation - END -->
+
+
+    <!-- Admin BLOG CONTENT - START -->
+    <div class="container col-sm-10">
+            @RenderBody()
+     </div>
+    <!--  Admin BLOG SIDEBAR - END -->
+
+
+    <!-- Admin BLOG Footer - START -->
+    <div class="text-center">
+        @await Component.InvokeAsync("Footer")
+    </div>
+    @*@Html.Partial("PartialFooter")*@
+    <!-- Admin BLOG Footer - END -->
+</body>
+</html>

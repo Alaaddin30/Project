@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Comment>
+    <form id="commentForm">
+         <div class="form-group">
+             <label>Leave comment</label>
+             <textarea id="commentBody" name="comment" class="form-control" cols="7" rows="3" placeholder="Comment">
+
+             </textarea>
+         </div>
+        <button id="commentSubmit"
+                data-is-auth="@ViewContext.HttpContext.User.Identity.IsAuthenticated"
+                data-user-name="@ViewContext.HttpContext.User.Identity.Name"
+                type="submit" class="btn btn-outline-danger">Post comment</button>
+        <span id="notify" class="text-danger"><small>Log in to post comment</small></span>
+    </form>
+    <hr>
+
+<h3>Comments</h3>
+<hr />
+<div id="commentsList">
+@if (Model.Count()==0)
+{
+    <div class="text-center text-danger p-1 m-1">No comments yet <br />Be the first who comments blog</div>
+
+}
+else
+{
+    foreach (Comment comment in Model)
+    {
+        <div class="message">
+            <p class="blog-meta">Posted by <a href="#">
+                <span user-info="USERNAME" 
+                      user-name-id="@comment.UserId"
+                      user-name-cssClass=""
+                      ></span>
+                </a> On @comment.CreatedAt.ToLocalTime()  </p>
+            @comment.Body
+        </div>
+        <hr />
+
+    }
+}
+
+</div>
+<script asp-href-include="lib/moment/min/*.min.js"></script>
+<script asp-src-include="apis/add-comment.js"></script>

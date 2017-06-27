@@ -1,0 +1,17 @@
+﻿<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Blog</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Index" asp-controller="UserAdmin">Manage Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Index" asp-controller="RoleAdmin">Manage Roles</a>
+            </li>
+        </ul>
+        @await Component.InvokeAsync("Login")
+     </div>
+</nav>

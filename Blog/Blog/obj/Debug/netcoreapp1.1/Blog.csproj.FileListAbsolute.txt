@@ -1,0 +1,9 @@
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug\netcoreapp1.1\Blog.deps.json
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug\netcoreapp1.1\Blog.runtimeconfig.json
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug\netcoreapp1.1\Blog.runtimeconfig.dev.json
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug\netcoreapp1.1\Blog.dll
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\Blog.csprojResolveAssemblyReference.cache
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\Blog.AssemblyInfo.cs
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug\netcoreapp1.1\Blog.pdb
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\Blog.dll
+c:\users\alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\Blog.pdb

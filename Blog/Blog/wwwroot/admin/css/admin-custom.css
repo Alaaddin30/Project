@@ -1,0 +1,31 @@
+﻿.form-group{
+    font-size:18px;
+    font-weight:600;
+}
+.cust-a, .cust-btn {
+    font-size: 14px;
+    padding: 15px 25px;
+    border-radius: 0;
+    /*font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;*/
+    font-weight: 800;
+    /*letter-spacing: 1px;*/
+    border:none;
+}
+
+    .cust-btn:hover, .cust-a:hover {
+        padding: 15px 25px;
+        border-radius: 0;
+        background-color: #0085A1;
+        color: #fff;
+        border:none;
+    }
+
+.cust-link {
+    font-size: 14px;
+    padding: 15px 25px;
+    border-radius: 0;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border: none;
+}
