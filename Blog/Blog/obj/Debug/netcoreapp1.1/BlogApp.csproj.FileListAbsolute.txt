@@ -7,3 +7,12 @@ C:\Users\Alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\bin\Debug
 C:\Users\Alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.dll
 C:\Users\Alaai\onedrive\dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.pdb
 C:\Users\Alaai\OneDrive\Dokument\visual studio 2017\Projects\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.csprojResolveAssemblyReference.cache
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\bin\Debug\netcoreapp1.1\BlogApp.deps.json
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\bin\Debug\netcoreapp1.1\BlogApp.runtimeconfig.json
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\bin\Debug\netcoreapp1.1\BlogApp.runtimeconfig.dev.json
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\bin\Debug\netcoreapp1.1\BlogApp.dll
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\bin\Debug\netcoreapp1.1\BlogApp.pdb
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.csprojResolveAssemblyReference.cache
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.AssemblyInfo.cs
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.dll
+C:\Users\Alaai\OneDrive\Dokument\Visual Studio 2017\Project\Blog\Blog\obj\Debug\netcoreapp1.1\BlogApp.pdb

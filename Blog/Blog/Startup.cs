@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using BlogApp.Infrastructure;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BlogApp
 {
@@ -46,6 +47,8 @@ namespace BlogApp
             services.AddTransient<ICommentRepository, CommentRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
+            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+            services.AddMemoryCache();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -149,6 +152,26 @@ namespace BlogApp
                 name: null,
                 template: "denied",
                 defaults: new { controller = "Account", action = "AccessDenied" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "categories",
+                defaults: new { controller = "CategoryAdmin", action = "Index" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "categories/new",
+                defaults: new { controller = "CategoryAdmin", action = "Create" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "categories/trash/{id:int}",
+                defaults: new { controller = "CategoryAdmin", action = "Delete" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "categories/change/{id:int}",
+                defaults: new { controller = "CategoryAdmin", action = "Edit" }
                 );
                 routes.MapRoute(
                 name: null,

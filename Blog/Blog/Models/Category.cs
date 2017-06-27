@@ -10,6 +10,7 @@ namespace BlogApp.Models
     {
         public int CategoryId { get; set; }
         [Required(ErrorMessage ="Category name is required")]
+        [MaxLength(20, ErrorMessage ="20 letters Maximum")]
         public string CategoryName { get; set; }
         public ICollection<Blog> Blogs { get; set; }
     }

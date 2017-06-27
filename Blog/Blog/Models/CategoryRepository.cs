@@ -14,5 +14,24 @@ namespace BlogApp.Models
         }
 
         public IEnumerable<Category> Categories => context.Categories;
+
+        public void Add(Category _cattegory)
+        {
+            context.Categories.Add(_cattegory);
+            context.SaveChanges();
+        }
+
+
+        public void Delete(Category _category)
+        {
+            context.Categories.Remove(_category);
+            context.SaveChanges();
+        }
+
+        public void Update(Category _category)
+        {
+            context.Categories.Update(_category);
+            context.SaveChanges();
+        }
     }
 }

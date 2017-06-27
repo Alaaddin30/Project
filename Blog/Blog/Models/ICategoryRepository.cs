@@ -8,5 +8,8 @@ namespace BlogApp.Models
     public interface ICategoryRepository
     {
         IEnumerable<Category> Categories { get; }
+        void Add(Category _category);
+        void Delete(Category _category);
+        void Update(Category _category);
     }
 }

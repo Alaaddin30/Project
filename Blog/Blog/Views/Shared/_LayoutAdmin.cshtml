@@ -26,6 +26,10 @@
 
     <!-- Admin BLOG CONTENT - START -->
     <div class="container col-sm-10">
+        @if (TempData["msg"] != null)
+        {
+            <div class="mt-5 mb-2"><small><span class="alert alert-danger text-sm-center">@TempData["msg"]</span></small></div>
+        }
             @RenderBody()
      </div>
     <!--  Admin BLOG SIDEBAR - END -->

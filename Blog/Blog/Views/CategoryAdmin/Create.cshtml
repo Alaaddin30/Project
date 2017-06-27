@@ -1,0 +1,13 @@
+﻿@model Category
+@{ 
+    Layout = "_LayoutAdmin";
+}
+<div class="alert alert-heading lead mt-5"><h3>Add New Category</h3></div>
+<form  method="post" asp-action="Create" class="col-sm-5">
+    <div class="form-group">
+        <label asp-for="CategoryName">Name</label>
+        <input asp-for="CategoryName" class="form-control"/>
+        <small><span asp-validation-for="CategoryName" class="text-danger"></span></small>
+    </div>
+    <button type="submit" class="btn btn-lg btn-success cust-link">Save Category <i class="fa fa-save"></i></button>
+</form>
