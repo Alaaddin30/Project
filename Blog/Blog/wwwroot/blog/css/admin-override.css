@@ -1,1 +1,18 @@
-﻿
+﻿pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 20px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 3px;
+}
+
+.pagination > a.active, .pagination > a:hover, .pagination > a:focus {
+    color: #fff;
+    background-color: #0085A1;
+    border: 1px solid #0085A1;
+}

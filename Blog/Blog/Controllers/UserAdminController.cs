@@ -13,6 +13,8 @@ namespace BlogApp.Controllers
     [Authorize(Roles = "Admins")]
     public class UserAdminController : Controller
     {
+        public int  ItemsPerPage= 5;
+
         private UserManager<AppUser> userManager;
         private IUserValidator<AppUser> userValidator;
         private IPasswordValidator<AppUser> passwordValidator;
@@ -23,7 +25,25 @@ namespace BlogApp.Controllers
             passwordValidator = _passwordValidator;
             passwordHasher = _passwordHasher;
         }
-        public ViewResult Index() => View(userManager.Users);
+        public ViewResult Index(int page = 1) {
+            IEnumerable<AppUser> users = userManager.Users
+                .OrderBy(u=>u.Id)
+                .Skip((page - 1) * ItemsPerPage)
+                .Take(ItemsPerPage);
+            PaginationInfo info = new PaginationInfo()
+
+            {
+                CurrentPage = page,
+                ItemsPerPage = ItemsPerPage,
+                TotalItems = userManager.Users.Count()
+            };
+
+            return View(new AdminViewModel<AppUser>()
+            {
+                Sequuence= users,
+                PaginationInfo= info
+            });
+        }
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]

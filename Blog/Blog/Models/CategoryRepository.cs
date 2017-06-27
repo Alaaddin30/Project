@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,10 +23,17 @@ namespace BlogApp.Models
         }
 
 
-        public void Delete(Category _category)
+        public int Delete(int id)
         {
-            context.Categories.Remove(_category);
-            context.SaveChanges();
+            Category entityToDelete = context.Categories
+                .Include(c => c.Blogs)
+                .FirstOrDefault(c => c.CategoryId == id);
+            if (entityToDelete != null)
+            {
+                context.Categories.Remove(entityToDelete);
+                return context.SaveChanges();
+            }
+            return 0;
         }
 
         public void Update(Category _category)

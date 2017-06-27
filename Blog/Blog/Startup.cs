@@ -105,8 +105,8 @@ namespace BlogApp
                 );
                 routes.MapRoute(
                 name: null,
-                template: "users",
-                defaults: new { controller = "UserAdmin", action = "Index" }
+                template: "users/{page:int}",
+                defaults: new { controller = "UserAdmin", action = "Index", page=1 }
                 );
                 routes.MapRoute(
                 name: null,
@@ -172,6 +172,21 @@ namespace BlogApp
                 name: null,
                 template: "categories/change/{id:int}",
                 defaults: new { controller = "CategoryAdmin", action = "Edit" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "admins/blogs/{page:int}",
+                defaults: new { controller = "BlogAdmin", action = "Index", page=1 }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "admins/delete/{id:int}",
+                defaults: new { controller = "BlogAdmin", action = "Delete" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "admins/new",
+                defaults: new { controller = "BlogAdmin", action = "Add" }
                 );
                 routes.MapRoute(
                 name: null,

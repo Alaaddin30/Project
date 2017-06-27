@@ -26,5 +26,23 @@ namespace BlogApp.Models
             }
             return null;
         }
+
+        public int Delete(int id)
+        {
+            Models.Blog entitytoDelet = context.Blogs
+                .Include(b => b.Likes)
+                .Include(b => b.Comments)
+                .FirstOrDefault(b => b.BlogId == id);
+            if (entitytoDelet != null)
+            {
+                context.Blogs.Remove(entitytoDelet);
+                return context.SaveChanges();
+            }
+            return 0;
+        }
+        public void Add(Blog blog)
+        {
+            context.Blogs.Add(blog);
+        }
     }
 }

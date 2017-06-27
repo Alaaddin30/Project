@@ -1,0 +1,35 @@
+﻿@model AdminViewModel<Blog>
+@{ 
+    Layout = "_LayoutAdmin";
+}
+
+<div class="alert alert-heading lead mt-3 mb-3"><h3>All Blogs</h3></div> 
+<table class="table table-sm table-bordered">
+    <thead><tr><th>Blog ID</th><th>Title</th><th>Blog</th><th>#</th></tr></thead>
+    @if (Model.Sequuence.Count() == 0)
+    {
+        <tr><td class="text-center" colspan="4">No Blogs In Database Yet</td></tr>
+
+    }
+    else
+    {
+        foreach(Blog blog in Model.Sequuence)
+        {
+            <tr>
+                <td>@blog.BlogId</td>
+                <td>@blog.Title.Substring(0,20)...</td>
+                <td>@blog.Body.Substring(0,20)...</td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-route-id="@blog.BlogId">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete <i class="fa fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+
+        }
+
+    }
+</table>
+
+
+<div pagination-all pagination-model="@Model.PaginationInfo" action-method="Index" class="pagination mt-5 mb-5"></div>

@@ -9,7 +9,7 @@ namespace BlogApp.Models
     {
         IEnumerable<Category> Categories { get; }
         void Add(Category _category);
-        void Delete(Category _category);
+        int Delete(int id);
         void Update(Category _category);
     }
 }

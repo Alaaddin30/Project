@@ -41,14 +41,12 @@ namespace BlogApp.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            Category category = repository.Categories.FirstOrDefault(c => c.CategoryId == id);
-            if (category != null)
+            if (id!=0)
             {
-                repository.Delete(category);
-                TempData["msg"] = $"{category.CategoryName} deleted successfully";
+                int res= repository.Delete(id);
+                TempData["msg"] = res > 0 ? $" Category With {id} ID deleted successfully" : "Category Not Found or Somthing went wrong ";
                 return RedirectToAction(nameof(Index));
             }
-            TempData["msg"] = "Category Not Found";
             return RedirectToAction(nameof(Index));
 
         }

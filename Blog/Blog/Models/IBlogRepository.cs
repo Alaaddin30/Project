@@ -9,5 +9,7 @@ namespace BlogApp.Models
     {
         IEnumerable<Blog> Blogs { get; }
         Blog Blog(int id);
+        void Add(Blog blog);
+        int Delete(int id);
     }
 }
