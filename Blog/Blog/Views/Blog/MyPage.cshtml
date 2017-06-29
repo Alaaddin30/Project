@@ -1,5 +1,13 @@
 ﻿@model AdminViewModel<Blog>
 
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger text-center col-sm-5 mt-5 mb-5">
+        <small>@TempData["msg"]</small>
+    </div>
+
+}
 <div class="alert alert-heading lead mt-3 mb-3"><h3>My Blogs</h3></div>
 <table class="table table-sm table-bordered table-sm">
     <thead><tr><th>Title</th><th>Edit</th><th>Delete</th></tr></thead>

@@ -8,8 +8,9 @@ namespace BlogApp.Models.ViewModels
 {
     public class CreateBlogViewModel
     {
+        public int BlogId { get; set; }
         [Required(ErrorMessage ="Choose Category")]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         [Required(ErrorMessage ="Enter Title")]
         public string Title { get; set; }
         [Required(ErrorMessage ="Enter Body")]

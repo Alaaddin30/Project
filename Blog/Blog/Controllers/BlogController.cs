@@ -115,7 +115,64 @@ namespace BlogApp.Controllers
                     CreatedAt= DateTime.Now
                     
                 });
+                TempData["msg"] = "Blog created successfully";
                 return RedirectToAction(nameof(MyPage));
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Delete(int id)
+        {
+            if (id != 0)
+            {
+                int res = repository.Delete(id);
+                TempData["msg"]= res > 0 ? "Blog Deleted Successfully" :  "Something went wrong";
+            }
+            return RedirectToAction(nameof(MyPage));
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Models.Blog blog = repository.Blog(id);
+            if (blog != null)
+            {
+                ViewBag.Categories = new SelectList(categoryRepository.Categories,
+                    nameof(Category.CategoryId),
+                    nameof(Category.CategoryName));
+                return View( new CreateBlogViewModel
+                {
+                    BlogId= blog.BlogId,
+                    CategoryId = blog.CategoryId,
+                    Title= blog.Title,
+                    Body= blog.Body
+                });
+            }
+            TempData["msg"] = "Blog not found";
+            return RedirectToAction(nameof(MyPage));
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult Edit(CreateBlogViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (repository.Blog(model.BlogId)!=null)
+                {
+                    repository.Save(new Models.Blog
+                    {
+                        BlogId= model.BlogId,
+                        CategoryId = model.CategoryId,
+                        Title = model.Title,
+                        Body= model.Body
+                    });
+                    TempData["msg"] = "Blog Updated successfully";
+                    return RedirectToAction(nameof(MyPage));
+                }
             }
             return View(model);
         }

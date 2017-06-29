@@ -11,5 +11,6 @@ namespace BlogApp.Models
         Blog Blog(int id);
         void Add(Blog blog);
         int Delete(int id);
+        void Save(Blog blog);
     }
 }

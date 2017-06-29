@@ -195,6 +195,16 @@ namespace BlogApp
                 );
                 routes.MapRoute(
                 name: null,
+                template: "blogs/delete/{id:int}",
+                defaults: new { controller = "Blog", action = "Delete" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "blogs/change/{id:int}",
+                defaults: new { controller = "Blog", action = "Edit" }
+                );
+                routes.MapRoute(
+                name: null,
                 template: "",
                 defaults: new { controller = "Blog", action = "Index" }
                 );

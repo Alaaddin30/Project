@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,8 @@ namespace BlogApp.Models
 
         public Blog Blog(int blogId)
         { 
-            //  bad experince request database two times 
-            Blog blog = context.Blogs.FirstOrDefault(b => b.BlogId == blogId);
+            //Blog blog = context.Blogs.FirstOrDefault(b => b.BlogId == blogId);
+            Blog blog = context.Blogs.Find(blogId);
             if (blog != null)
             {
                 context.Blogs.Where(b => b.BlogId == blogId).Include(b => b.Comments).ToList();
@@ -45,5 +46,19 @@ namespace BlogApp.Models
             context.Blogs.Add(blog);
             context.SaveChanges();
         }
+
+        public void Save(Blog _blog)
+        {
+            Models.Blog blog = context.Blogs.FirstOrDefault(b => b.BlogId == _blog.BlogId);
+            if (blog != null)
+            {
+                blog.CategoryId = _blog.CategoryId;
+                blog.Title = _blog.Title;
+                blog.Body = _blog.Body;
+            }
+            context.Entry(blog).State = EntityState.Modified;
+            context.SaveChanges();
+        }
     }
 }
+
