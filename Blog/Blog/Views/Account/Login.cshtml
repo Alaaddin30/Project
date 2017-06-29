@@ -1,9 +1,8 @@
 ﻿@model LoginViewModel
 @{ 
     ViewBag.Title = "Log in";
-    Layout = "_AdminLayout";
 }
-<div id="login" class="container mt-5  col-sm-5">
+<div id="login" class="container mt-5 mb-5  col-sm-7">
     <h3>Log In</h3>
     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
     <form method="post" asp-action="Login" asp-controller="Account">

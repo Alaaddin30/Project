@@ -1,0 +1,31 @@
+﻿@model AdminViewModel<Blog>
+
+<div class="alert alert-heading lead mt-3 mb-3"><h3>My Blogs</h3></div>
+<table class="table table-sm table-bordered table-sm">
+    <thead><tr><th>Title</th><th>Edit</th><th>Delete</th></tr></thead>
+    @if (Model.Sequuence.Count() == 0)
+    {
+        <tr><td class="text-center" colspan="3"> No Blogs </td></tr>
+
+    }
+    else
+    {
+        foreach (Blog blog in Model.Sequuence)
+        {
+            <tr>
+                <td>@(blog.Title.Length>30 ? blog.Title.Substring(0, 9) : blog.Title)</td>
+                <td><a class="btn btn-warning btn-tbl" asp-action="Edit" asp-route-id="@blog.BlogId">Edit <i class="fa fa-edit"></i></a></td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-route-id="@blog.BlogId">
+                        <button type="submit" class="btn btn-danger btn-tbl">Delete <i class="fa fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+
+        }
+
+    }
+</table>
+<div class="mb-5 mt-5"><a asp-action="Create" asp-controller="Blog" class="btn btn-success">Post Blog <i class="fa fa-plus-circle"></i></a></div>
+<hr />
+<div pagination-all pagination-model="@Model.PaginationInfo" action-method="MyBlog" class="pagination mt-5 mb-5"></div>

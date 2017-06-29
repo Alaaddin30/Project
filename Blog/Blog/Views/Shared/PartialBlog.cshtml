@@ -2,7 +2,7 @@
 
 
 <div class="post-preview">
-    <a asp-controller="Blog" asp-action="ViewBlog" asp-route-blogId="@Model.BlogId"><h2 class="post-title">@Model.Title.Substring(0,50)</h2>
+    <a asp-controller="Blog" asp-action="ViewBlog" asp-route-blogId="@Model.BlogId"><h2 class="post-title">@(Model.Title.Length > 30 ? Model.Title.Substring(0, 31) : Model.Title)</h2>
     <h3 class="post-subtitle">@Model.Body?.Substring(0, 75)...</h3>
     </a>
     <p class="post-meta">Posted by <a href="#">Nobody (Initial Data)</a> on @Model.CreatedAt.ToString("MMMM dd, yyyy")</p>

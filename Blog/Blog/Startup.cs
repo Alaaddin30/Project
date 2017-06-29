@@ -90,8 +90,8 @@ namespace BlogApp
                 );
                 routes.MapRoute(
                 name: null,
-                template: "user",
-                defaults: new { controller = "Account", action = "Index" }
+                template: "profile/{page:int}",
+                defaults: new { controller = "Blog", action = "MyPage" , page=1}
                 );
                 routes.MapRoute(
                  name: null,
@@ -187,6 +187,11 @@ namespace BlogApp
                 name: null,
                 template: "admins/new",
                 defaults: new { controller = "BlogAdmin", action = "Add" }
+                );
+                routes.MapRoute(
+                name: null,
+                template: "blogs/new",
+                defaults: new { controller = "Blog", action = "Create" }
                 );
                 routes.MapRoute(
                 name: null,

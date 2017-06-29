@@ -43,6 +43,7 @@ namespace BlogApp.Models
         public void Add(Blog blog)
         {
             context.Blogs.Add(blog);
+            context.SaveChanges();
         }
     }
 }

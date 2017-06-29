@@ -79,3 +79,12 @@
     color: #797979;
     padding-left: 10px;
 }
+
+.btn-tbl {
+    font-size: 11px;
+    font-weight: 100;
+    /*letter-spacing: 1px;*/
+    border-radius: 0;
+    padding: 5px 5px;
+}
+}

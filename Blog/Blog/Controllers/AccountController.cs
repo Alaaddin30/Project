@@ -52,7 +52,7 @@ namespace BlogApp.Controllers
                         {
                             return Redirect("/users");
                         }
-                        return Redirect(loginViewModel?.ReturnUrl ?? "/");
+                        return Redirect(loginViewModel?.ReturnUrl ?? "/profile");
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace BlogApp.Controllers
                 if (result.Succeeded)
                 {
                     await signManager.PasswordSignInAsync(signUpViewModel.UserName, signUpViewModel.Password,false,false);
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(BlogController.MyPage), nameof(BlogController));
                 }
                 else
                 {

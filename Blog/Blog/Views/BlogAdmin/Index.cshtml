@@ -17,8 +17,8 @@
         {
             <tr>
                 <td>@blog.BlogId</td>
-                <td>@blog.Title.Substring(0,20)...</td>
-                <td>@blog.Body.Substring(0,20)...</td>
+                <td>@blog.Title.Substring(0,31)...</td>
+                <td>@blog.Body.Substring(0,51).......</td>
                 <td>
                     <form method="post" asp-action="Delete" asp-route-id="@blog.BlogId">
                         <button type="submit" class="btn btn-sm btn-danger">Delete <i class="fa fa-trash"></i></button>
